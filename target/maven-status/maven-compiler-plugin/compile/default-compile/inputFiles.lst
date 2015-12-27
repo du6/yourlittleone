@@ -1,3 +1,12 @@
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/servlet/SetAnnouncementServlet.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/service/OfyService.java
 /Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/Constants.java
-/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/HelloGreeting.java
-/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/Greetings.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/form/ConferenceQueryForm.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/domain/Profile.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/form/ConferenceForm.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/domain/AppEngineUser.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/spi/ConferenceApi.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/domain/Conference.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/servlet/SendConfirmationEmailServlet.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/form/ProfileForm.java
+/Users/yuelindu/work/yourLittleOne/yourlittleone/src/main/java/com/appspot/yourlittleone/domain/Announcement.java
