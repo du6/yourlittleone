@@ -12,16 +12,16 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
-            <param-value>com.google.devrel.training.conference.spi.ConferenceApi</param-value>
+            <param-value>com.appspot.yourlittleone.spi.ConferenceApi</param-value>
         </init-param>
     </servlet>
     <servlet>
         <servlet-name>SendConfirmationEmailServlet</servlet-name>
-        <servlet-class>com.google.devrel.training.conference.servlet.SendConfirmationEmailServlet</servlet-class>
+        <servlet-class>com.appspot.yourlittleone.servlet.SendConfirmationEmailServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SetAnnouncementServlet</servlet-name>
-        <servlet-class>com.google.devrel.training.conference.servlet.SetAnnouncementServlet</servlet-class>
+        <servlet-class>com.appspot.yourlittleone.servlet.SetAnnouncementServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SystemServiceServlet</servlet-name>

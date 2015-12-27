@@ -1,12 +1,12 @@
-package com.google.devrel.training.conference.servlet;
+package com.appspot.yourlittleone.servlet;
 
-import static com.google.devrel.training.conference.service.OfyService.ofy;
+import static com.appspot.yourlittleone.service.OfyService.ofy;
 
 import com.google.appengine.api.memcache.MemcacheService;
 import com.google.appengine.api.memcache.MemcacheServiceFactory;
 import com.google.common.base.Joiner;
-import com.google.devrel.training.conference.Constants;
-import com.google.devrel.training.conference.domain.Conference;
+import com.appspot.yourlittleone.Constants;
+import com.appspot.yourlittleone.domain.Conference;
 
 import java.io.IOException;
 import java.util.ArrayList;

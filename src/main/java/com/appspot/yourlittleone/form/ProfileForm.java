@@ -1,4 +1,4 @@
-package com.google.devrel.training.conference.form;
+package com.appspot.yourlittleone.form;
 
 /**
  * Pojo representing a profile form on the client side.

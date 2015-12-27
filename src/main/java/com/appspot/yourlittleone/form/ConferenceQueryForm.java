@@ -1,11 +1,11 @@
-package com.google.devrel.training.conference.form;
+package com.appspot.yourlittleone.form;
 
-import static com.google.devrel.training.conference.service.OfyService.ofy;
+import static com.appspot.yourlittleone.service.OfyService.ofy;
 
 import com.google.api.server.spi.config.AnnotationBoolean;
 import com.google.api.server.spi.config.ApiResourceProperty;
 import com.google.common.collect.ImmutableList;
-import com.google.devrel.training.conference.domain.Conference;
+import com.appspot.yourlittleone.domain.Conference;
 
 import com.googlecode.objectify.cmd.Query;
 

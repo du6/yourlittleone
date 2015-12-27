@@ -1,8 +1,8 @@
-package com.google.devrel.training.conference.service;
+package com.appspot.yourlittleone.service;
 
-import com.google.devrel.training.conference.domain.AppEngineUser;
-import com.google.devrel.training.conference.domain.Conference;
-import com.google.devrel.training.conference.domain.Profile;
+import com.appspot.yourlittleone.domain.AppEngineUser;
+import com.appspot.yourlittleone.domain.Conference;
+import com.appspot.yourlittleone.domain.Profile;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;

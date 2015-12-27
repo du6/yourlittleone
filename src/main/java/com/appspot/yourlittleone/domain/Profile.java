@@ -1,7 +1,7 @@
-package com.google.devrel.training.conference.domain;
+package com.appspot.yourlittleone.domain;
 
 import com.google.common.collect.ImmutableList;
-import com.google.devrel.training.conference.form.ProfileForm.TeeShirtSize;
+import com.appspot.yourlittleone.form.ProfileForm.TeeShirtSize;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 

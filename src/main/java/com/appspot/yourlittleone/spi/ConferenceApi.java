@@ -1,7 +1,7 @@
-package com.google.devrel.training.conference.spi;
+package com.appspot.yourlittleone.spi;
 
-import static com.google.devrel.training.conference.service.OfyService.factory;
-import static com.google.devrel.training.conference.service.OfyService.ofy;
+import static com.appspot.yourlittleone.service.OfyService.factory;
+import static com.appspot.yourlittleone.service.OfyService.ofy;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
@@ -16,15 +16,15 @@ import com.google.appengine.api.taskqueue.Queue;
 import com.google.appengine.api.taskqueue.QueueFactory;
 import com.google.appengine.api.taskqueue.TaskOptions;
 import com.google.appengine.api.users.User;
-import com.google.devrel.training.conference.Constants;
-import com.google.devrel.training.conference.domain.Announcement;
-import com.google.devrel.training.conference.domain.AppEngineUser;
-import com.google.devrel.training.conference.domain.Conference;
-import com.google.devrel.training.conference.domain.Profile;
-import com.google.devrel.training.conference.form.ConferenceForm;
-import com.google.devrel.training.conference.form.ConferenceQueryForm;
-import com.google.devrel.training.conference.form.ProfileForm;
-import com.google.devrel.training.conference.form.ProfileForm.TeeShirtSize;
+import com.appspot.yourlittleone.Constants;
+import com.appspot.yourlittleone.domain.Announcement;
+import com.appspot.yourlittleone.domain.AppEngineUser;
+import com.appspot.yourlittleone.domain.Conference;
+import com.appspot.yourlittleone.domain.Profile;
+import com.appspot.yourlittleone.form.ConferenceForm;
+import com.appspot.yourlittleone.form.ConferenceQueryForm;
+import com.appspot.yourlittleone.form.ProfileForm;
+import com.appspot.yourlittleone.form.ProfileForm.TeeShirtSize;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.Work;

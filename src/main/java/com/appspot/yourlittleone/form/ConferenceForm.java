@@ -1,4 +1,4 @@
-package com.google.devrel.training.conference.form;
+package com.appspot.yourlittleone.form;
 
 import com.google.common.collect.ImmutableList;
 

@@ -1,4 +1,4 @@
-package com.google.devrel.training.conference.domain;
+package com.appspot.yourlittleone.domain;
 
 /**
  * A simple wrapper for announcement message.

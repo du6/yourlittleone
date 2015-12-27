@@ -1,4 +1,4 @@
-package com.google.devrel.training.conference.servlet;
+package com.appspot.yourlittleone.servlet;
 
 import com.google.appengine.api.utils.SystemProperty;
 

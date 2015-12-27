@@ -1,4 +1,4 @@
-package com.google.devrel.training.conference.domain;
+package com.appspot.yourlittleone.domain;
 
 import com.google.appengine.api.users.User;
 import com.googlecode.objectify.Key;
