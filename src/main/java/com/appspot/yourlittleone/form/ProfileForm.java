@@ -10,41 +10,37 @@ public class ProfileForm {
     private String displayName;
 
     /**
-     * User's tee shirt size
+     * User's gender
      */
-    private TeeShirtSize teeShirtSize;
+    private Gender gender;
 
     private ProfileForm () {}
 
     /**
      * Constructor for ProfileForm, solely for unit test.
      * @param displayName A String for displaying the user on this system.
-     * @param teeShirtSize User's tee shirt size
+     * @param gender User's gender
      */
-    public ProfileForm(String displayName, TeeShirtSize teeShirtSize) {
+    public ProfileForm(String displayName, Gender gender) {
         this.displayName = displayName;
-        this.teeShirtSize = teeShirtSize;
+        this.gender = gender;
     }
 
     public String getDisplayName() {
         return displayName;
     }
 
-    public TeeShirtSize getTeeShirtSize() {
-        return teeShirtSize;
+    public Gender getGender() {
+        return gender;
     }
 
     /**
-     * Enum representing T shirt size.
+     * Enum representing gender.
      */
-    public static enum TeeShirtSize {
-        NOT_SPECIFIED,
-        XS,
-        S,
-        M,
-        L,
-        XL,
-        XXL,
-        XXXL
+    public static enum Gender {
+        Male,
+        Female,
+        Third,
+        You_Guess
     }
 }

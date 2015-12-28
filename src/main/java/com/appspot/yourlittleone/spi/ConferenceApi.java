@@ -24,7 +24,7 @@ import com.appspot.yourlittleone.domain.Profile;
 import com.appspot.yourlittleone.form.ConferenceForm;
 import com.appspot.yourlittleone.form.ConferenceQueryForm;
 import com.appspot.yourlittleone.form.ProfileForm;
-import com.appspot.yourlittleone.form.ProfileForm.TeeShirtSize;
+import com.appspot.yourlittleone.form.ProfileForm.Gender;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.Work;
@@ -66,7 +66,7 @@ public class ConferenceApi {
             // Create a new Profile if not exist.
             String email = user.getEmail();
             profile = new Profile(userId,
-                    extractDefaultDisplayNameFromEmail(email), email, TeeShirtSize.NOT_SPECIFIED);
+                    extractDefaultDisplayNameFromEmail(email), email, Gender.You_Guess);
         }
         return profile;
     }
@@ -196,20 +196,20 @@ public class ConferenceApi {
             throw new UnauthorizedException("Authorization required");
         }
         String displayName = profileForm.getDisplayName();
-        TeeShirtSize teeShirtSize = profileForm.getTeeShirtSize();
+        Gender gender = profileForm.getGender();
 
         Profile profile = ofy().load().key(Key.create(Profile.class, getUserId(user))).now();
         if (profile == null) {
-            // Populate displayName and teeShirtSize with the default values if null.
+            // Populate displayName and gender with the default values if null.
             if (displayName == null) {
                 displayName = extractDefaultDisplayNameFromEmail(user.getEmail());
             }
-            if (teeShirtSize == null) {
-                teeShirtSize = TeeShirtSize.NOT_SPECIFIED;
+            if (gender == null) {
+                gender = Gender.You_Guess;
             }
-            profile = new Profile(getUserId(user), displayName, user.getEmail(), teeShirtSize);
+            profile = new Profile(getUserId(user), displayName, user.getEmail(), gender);
         } else {
-            profile.update(displayName, teeShirtSize);
+            profile.update(displayName, gender);
         }
         ofy().save().entity(profile).now();
         return profile;

@@ -36,17 +36,14 @@ conferenceApp.controllers.controller('MyProfileCtrl',
         $scope.initialProfile = {};
 
         /**
-         * Candidates for the teeShirtSize select box.
+         * Candidates for the gender select box.
          * @type {string[]}
          */
-        $scope.teeShirtSizes = [
-            'XS',
-            'S',
-            'M',
-            'L',
-            'XL',
-            'XXL',
-            'XXXL'
+        $scope.genderOptions = [
+            {value: 'Male', label: 'Male'},
+        	{value: 'Female', label: 'Female'},
+        	{value: 'Third', label: 'Third'},
+            {value: 'You_Guess', label: 'You Guess'}
         ];
 
         /**
@@ -66,7 +63,7 @@ conferenceApp.controllers.controller('MyProfileCtrl',
                             } else {
                                 // Succeeded to get the user profile.
                                 $scope.profile.displayName = resp.result.displayName;
-                                $scope.profile.teeShirtSize = resp.result.teeShirtSize;
+                                $scope.profile.gender = resp.result.gender;
                                 $scope.initialProfile = resp.result;
                             }
                         });
@@ -110,7 +107,7 @@ conferenceApp.controllers.controller('MyProfileCtrl',
                             $scope.submitted = false;
                             $scope.initialProfile = {
                                 displayName: $scope.profile.displayName,
-                                teeShirtSize: $scope.profile.teeShirtSize
+                                gender: $scope.profile.gender
                             };
 
                             $log.info($scope.messages + JSON.stringify(resp.result));
@@ -138,27 +135,16 @@ conferenceApp.controllers.controller('CreateConferenceCtrl',
         $scope.conference = $scope.conference || {};
 
         /**
-         * Holds the default values for the input candidates for city select.
-         * @type {string[]}
-         */
-        $scope.cities = [
-            'Chicago',
-            'London',
-            'Paris',
-            'San Francisco',
-            'Tokyo'
-        ];
-
-        /**
          * Holds the default values for the input candidates for topics select.
          * @type {string[]}
          */
         $scope.topics = [
-            'Medical Innovations',
-            'Programming Languages',
-            'Web Technologies',
-            'Movie Making',
-            'Health and Nutrition'
+            'General Social',
+            'Eating',
+            'Gamming',
+            'Chatting',
+            'Indoor',
+            'Outdoor'
         ];
 
         /**

@@ -1,7 +1,7 @@
 package com.appspot.yourlittleone.domain;
 
 import com.google.common.collect.ImmutableList;
-import com.appspot.yourlittleone.form.ProfileForm.TeeShirtSize;
+import com.appspot.yourlittleone.form.ProfileForm.Gender;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
@@ -30,10 +30,10 @@ public class Profile {
     private String mainEmail;
 
     /**
-     * The user's tee shirt size.
+     * The user's gender.
      * Options are defined as an Enum in ProfileForm
      */
-    private TeeShirtSize teeShirtSize;
+    private Gender gender;
 
     /**
      * Keys of the conferences that this user registers to attend.
@@ -50,13 +50,13 @@ public class Profile {
      * @param userId The datastore key.
      * @param displayName Any string user wants us to display him/her on this system.
      * @param mainEmail User's main e-mail address.
-     * @param teeShirtSize User's teeShirtSize (Enum is in ProfileForm)
+     * @param gender User's gender (Enum is in ProfileForm)
      */
-    public Profile(String userId, String displayName, String mainEmail, TeeShirtSize teeShirtSize) {
+    public Profile(String userId, String displayName, String mainEmail, Gender gender) {
         this.userId = userId;
         this.displayName = displayName;
         this.mainEmail = mainEmail;
-        this.teeShirtSize = teeShirtSize;
+        this.gender = gender;
     }
 
     /**
@@ -84,11 +84,11 @@ public class Profile {
     }
 
     /**
-     * Getter for teeShirtSize.
-     * @return teeShirtSize.
+     * Getter for gender.
+     * @return gender.
      */
-    public TeeShirtSize getTeeShirtSize() {
-        return teeShirtSize;
+    public Gender getGender() {
+        return gender;
     }
 
     /**
@@ -100,16 +100,16 @@ public class Profile {
     }
 
     /**
-     * Update the Profile with the given displayName and teeShirtSize
+     * Update the Profile with the given displayName and gender
      * @param displayName
-     * @param teeShirtSize
+     * @param gender
      */
-    public void update(String displayName, TeeShirtSize teeShirtSize) {
+    public void update(String displayName, Gender gender) {
         if (displayName != null) {
             this.displayName = displayName;
         }
-        if (teeShirtSize != null) {
-            this.teeShirtSize = teeShirtSize;
+        if (gender != null) {
+            this.gender = gender;
         }
     }
 

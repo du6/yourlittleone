@@ -21,11 +21,11 @@
                            class="form-control"/>
                 </div>
 
-                <div class="form-group" ng-class="{'has-warning': profile.teeShirtSize != initialProfile.teeShirtSize}">
-                    <label for="teeShirtSize">Tee shirt size</label>
+                <div class="form-group" ng-class="{'has-warning': profile.gender != initialProfile.gender}">
+                    <label for="gender">Gender</label>
                     <span class="label label-warning"
-                          ng-show="profile.teeShirtSize != initialProfile.teeShirtSize"> Changed</span>
-                    <select id="teeShirtSize" ng-model="profile.teeShirtSize" name="teeShirtSize" ng-options="size for size in teeShirtSizes"
+                          ng-show="profile.gender != initialProfile.gender"> Changed</span>
+                    <select id="gender" ng-model="profile.gender" name="gender" ng-options="gender.value as gender.label for gender in genderOptions"
                             class="form-control">
                     </select>
                 </div>

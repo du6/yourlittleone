@@ -25,17 +25,17 @@ public class ConferenceForm {
     private List<String> topics;
 
     /**
-     * The city where the conference will take place.
+     * The location where the conference will take place.
      */
-    private String city;
+    private String location;
 
     /**
-     * The start date of the conference.
+     * The start date and time of the conference.
      */
     private Date startDate;
 
     /**
-     * The end date of the conference.
+     * The end date and time of the conference.
      */
     private Date endDate;
 
@@ -51,17 +51,17 @@ public class ConferenceForm {
      * @param name
      * @param description
      * @param topics
-     * @param city
+     * @param location
      * @param startDate
      * @param endDate
      * @param maxAttendees
      */
-    public ConferenceForm(String name, String description, List<String> topics, String city,
+    public ConferenceForm(String name, String description, List<String> topics, String location,
                           Date startDate, Date endDate, int maxAttendees) {
         this.name = name;
         this.description = description;
         this.topics = topics == null ? null : ImmutableList.copyOf(topics);
-        this.city = city;
+        this.location = location;
         this.startDate = startDate == null ? null : new Date(startDate.getTime());
         this.endDate = endDate == null ? null : new Date(endDate.getTime());
         this.maxAttendees = maxAttendees;
@@ -79,8 +79,8 @@ public class ConferenceForm {
         return topics;
     }
 
-    public String getCity() {
-        return city;
+    public String getLocation() {
+        return location;
     }
 
     public Date getStartDate() {

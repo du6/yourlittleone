@@ -23,7 +23,7 @@ import java.util.List;
 @Entity
 public class Conference {
 
-    private static final String DEFAULT_CITY = "Default City";
+    private static final String DEFAULT_LOCATION = "Default Location";
 
     private static final List<String> DEFAULT_TOPICS = ImmutableList.of("Default", "Topic");
 
@@ -66,18 +66,18 @@ public class Conference {
     private List<String> topics;
 
     /**
-     * The name of the city that the conference takes place.
+     * The location that the conference takes place.
      */
     @Index
-    private String city;
+    private String location;
 
     /**
-     * The starting date of this conference.
+     * The starting date and time of this conference.
      */
     private Date startDate;
 
     /**
-     * The ending date of this conference.
+     * The ending date and time of this conference.
      */
     private Date endDate;
 
@@ -163,8 +163,8 @@ public class Conference {
         return topics == null ? null : ImmutableList.copyOf(topics);
     }
 
-    public String getCity() {
-        return city;
+    public String getLocation() {
+        return location;
     }
 
     /**
@@ -206,7 +206,7 @@ public class Conference {
         this.description = conferenceForm.getDescription();
         List<String> topics = conferenceForm.getTopics();
         this.topics = topics == null || topics.isEmpty() ? DEFAULT_TOPICS : topics;
-        this.city = conferenceForm.getCity() == null ? DEFAULT_CITY : conferenceForm.getCity();
+        this.location = conferenceForm.getLocation() == null ? DEFAULT_LOCATION : conferenceForm.getLocation();
 
         Date startDate = conferenceForm.getStartDate();
         this.startDate = startDate == null ? null : new Date(startDate.getTime());
@@ -233,7 +233,11 @@ public class Conference {
 
     public void bookSeats(final int number) {
         if (seatsAvailable < number) {
+        	if (seatsAvailable > 0) {
+        		throw new IllegalArgumentException("There are only" + seatsAvailable + "seats available.");
+        	} else {
             throw new IllegalArgumentException("There are no seats available.");
+        	}
         }
         seatsAvailable = seatsAvailable - number;
     }
@@ -249,8 +253,8 @@ public class Conference {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder("Id: " + id + "\n")
                 .append("Name: ").append(name).append("\n");
-        if (city != null) {
-            stringBuilder.append("City: ").append(city).append("\n");
+        if (location != null) {
+            stringBuilder.append("Location: ").append(location).append("\n");
         }
         if (topics != null && topics.size() > 0) {
             stringBuilder.append("Topics:\n");

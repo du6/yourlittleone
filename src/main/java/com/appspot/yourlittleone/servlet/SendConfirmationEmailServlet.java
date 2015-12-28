@@ -33,15 +33,15 @@ public class SendConfirmationEmailServlet extends HttpServlet {
         String conferenceInfo = request.getParameter("conferenceInfo");
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);
-        String body = "Hi, you have created a following conference.\n" + conferenceInfo;
+        String body = "Hi, you have created a following activity.\n" + conferenceInfo;
         try {
             Message message = new MimeMessage(session);
             InternetAddress from = new InternetAddress(
                     String.format("noreply@%s.appspotmail.com",
-                            SystemProperty.applicationId.get()), "Conference Central");
+                            SystemProperty.applicationId.get()), "Your Little One");
             message.setFrom(from);
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(email, ""));
-            message.setSubject("You created a new Conference!");
+            message.setSubject("You created a new Activity!");
             message.setText(body);
             Transport.send(message);
         } catch (MessagingException e) {
