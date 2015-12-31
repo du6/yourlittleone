@@ -1,7 +1,7 @@
 package com.appspot.yourlittleone.service;
 
 import com.appspot.yourlittleone.domain.AppEngineUser;
-import com.appspot.yourlittleone.domain.Conference;
+import com.appspot.yourlittleone.domain.Activity;
 import com.appspot.yourlittleone.domain.Profile;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
@@ -16,7 +16,7 @@ public class OfyService {
      */
     static {
         factory().register(AppEngineUser.class);
-        factory().register(Conference.class);
+        factory().register(Activity.class);
         factory().register(Profile.class);
     }
 

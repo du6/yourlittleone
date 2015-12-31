@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cronentries>
     <cron>
-        <url>/crons/set_announcement</url>
-        <description>Repopulate the announcement every 1 hour</description>
-        <schedule>1 of jan 00:00</schedule>
     </cron>
 </cronentries>
