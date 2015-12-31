@@ -232,11 +232,11 @@ public final class Activity {
 
     public void bookSeats(final int number) {
         if (seatsAvailable < number) {
-        	if (seatsAvailable > 0) {
-        		throw new IllegalArgumentException("There are only" + seatsAvailable + "seats available.");
-        	} else {
+          if (seatsAvailable > 0) {
+            throw new IllegalArgumentException("There are only" + seatsAvailable + "seats available.");
+          } else {
             throw new IllegalArgumentException("There are no seats available.");
-        	}
+          }
         }
         seatsAvailable = seatsAvailable - number;
     }

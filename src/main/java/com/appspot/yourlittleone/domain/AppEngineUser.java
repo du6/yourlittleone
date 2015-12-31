@@ -7,25 +7,25 @@ import com.googlecode.objectify.annotation.Id;
 
 @Entity
 public final class AppEngineUser {
-	@Id
-	private String email;
-	private User user;
-	
-	/**
+  @Id
+  private String email;
+  private User user;
+  
+  /**
    * Just making the default constructor private.
    */
   private AppEngineUser() {}
 
-	public AppEngineUser(User user) {
-		this.user = user;
-		this.email = user.getEmail();
-	}
+  public AppEngineUser(User user) {
+    this.user = user;
+    this.email = user.getEmail();
+  }
 
-	public User getUser() {
-		return user;
-	}
+  public User getUser() {
+    return user;
+  }
 
-	public Key<AppEngineUser> getKey() {
-		return Key.create(AppEngineUser.class, email);
-	}
+  public Key<AppEngineUser> getKey() {
+    return Key.create(AppEngineUser.class, email);
+  }
 }

@@ -5,13 +5,13 @@ package com.appspot.yourlittleone.domain;
  */
 public final class Announcement {
 
-	private final String message;
+  private final String message;
 
-	public Announcement(String message) {
-		this.message = message;
-	}
+  public Announcement(String message) {
+    this.message = message;
+  }
 
-	public String getMessage() {
-		return message;
-	}
+  public String getMessage() {
+    return message;
+  }
 }

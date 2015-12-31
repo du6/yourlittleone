@@ -41,8 +41,8 @@ conferenceApp.controllers.controller('MyProfileCtrl',
          */
         $scope.genderOptions = [
             {value: 'Male', label: 'Male'},
-        	{value: 'Female', label: 'Female'},
-        	{value: 'Third', label: 'Third'},
+          {value: 'Female', label: 'Female'},
+          {value: 'Third', label: 'Third'},
             {value: 'You_Guess', label: 'You Guess'}
         ];
 
