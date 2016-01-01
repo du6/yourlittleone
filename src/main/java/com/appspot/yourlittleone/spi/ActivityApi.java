@@ -22,6 +22,7 @@ import com.appspot.yourlittleone.domain.Announcement;
 import com.appspot.yourlittleone.domain.AppEngineUser;
 import com.appspot.yourlittleone.domain.Profile;
 import com.appspot.yourlittleone.form.ActivityForm;
+import com.appspot.yourlittleone.form.ActivityQueryForm;
 import com.appspot.yourlittleone.form.ProfileForm;
 import com.appspot.yourlittleone.form.ProfileForm.Gender;
 import com.googlecode.objectify.Key;
@@ -338,11 +339,11 @@ public final class ActivityApi {
      * @throws UnauthorizedException when the User object is null.
      */
     @ApiMethod(
-            name = "getActivitysToAttend",
-            path = "getActivitysToAttend",
+            name = "getActivitiesToAttend",
+            path = "getActivitiesToAttend",
             httpMethod = HttpMethod.GET
     )
-    public Collection<Activity> getActivitysToAttend(final User user)
+    public Collection<Activity> getActivitiesToAttend(final User user)
             throws UnauthorizedException, NotFoundException {
         // If not signed in, throw a 401 error.
         if (user == null) {
@@ -360,6 +361,34 @@ public final class ActivityApi {
         return ofy().load().keys(keysToAttend).values();
     }
 
+    
+    /**
+     * Queries against the datastore with the given filters and returns the result.
+     *
+     * Normally this kind of method is supposed to get invoked by a GET HTTP method,
+     * but we do it with POST, in order to receive activityQueryForm Object via the POST body.
+     *
+     * @param activityQueryForm A form object representing the query.
+     * @return A List of Activities that match the query.
+     */
+    @ApiMethod(
+            name = "queryActivities",
+            path = "queryActivities",
+            httpMethod = HttpMethod.POST
+    )
+    public List<Activity> queryActivities(ActivityQueryForm activityQueryForm) {
+        Iterable<Activity> activityIterable = activityQueryForm.getQuery();
+        List<Activity> result = new ArrayList<>(0);
+        List<Key<Profile>> organizersKeyList = new ArrayList<>(0);
+        for (Activity activity : activityIterable) {
+            organizersKeyList.add(Key.create(Profile.class, activity.getOrganizerUserId()));
+            result.add(activity);
+        }
+        // To avoid separate datastore gets for each Activity, pre-fetch the Profiles.
+        ofy().load().keys(organizersKeyList);
+        return result;
+    }
+    
 
     /**
      * Returns a list of Activities that the user created.
@@ -370,11 +399,11 @@ public final class ActivityApi {
      * @throws UnauthorizedException when the user is not signed in.
      */
     @ApiMethod(
-            name = "getActivitysCreated",
-            path = "getActivitysCreated",
+            name = "getActivitiesCreated",
+            path = "getActivitiesCreated",
             httpMethod = HttpMethod.POST
     )
-    public List<Activity> getActivitysCreated(final User user) throws UnauthorizedException {
+    public List<Activity> getActivitiesCreated(final User user) throws UnauthorizedException {
         // If not signed in, throw a 401 error.
         if (user == null) {
             throw new UnauthorizedException("Authorization required");

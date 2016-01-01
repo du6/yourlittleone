@@ -2,31 +2,31 @@
 
 /**
  * @ngdoc object
- * @name conferenceApp
+ * @name activityApp
  * @requires $routeProvider
- * @requires conferenceControllers
+ * @requires activityControllers
  * @requires ui.bootstrap
  *
  * @description
  * Root app, which routes and specifies the partial html and controller depending on the url requested.
  *
  */
-var app = angular.module('conferenceApp',
-    ['conferenceControllers', 'ngRoute', 'ui.bootstrap']).
+var app = angular.module('activityApp',
+    ['activityControllers', 'ngRoute', 'ui.bootstrap']).
     config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
-                when('/conference', {
-                    templateUrl: '/partials/show_conferences.html',
-                    controller: 'ShowConferenceCtrl'
+                when('/activity', {
+                    templateUrl: '/partials/show_activities.html',
+                    controller: 'ShowActivityCtrl'
                 }).
-                when('/conference/create', {
-                    templateUrl: '/partials/create_conferences.html',
-                    controller: 'CreateConferenceCtrl'
+                when('/activity/create', {
+                    templateUrl: '/partials/create_activities.html',
+                    controller: 'CreateActivityCtrl'
                 }).
-                when('/conference/detail/:websafeConferenceKey', {
-                    templateUrl: '/partials/conference_detail.html',
-                    controller: 'ConferenceDetailCtrl'
+                when('/activity/detail/:websafeActivityKey', {
+                    templateUrl: '/partials/activity_detail.html',
+                    controller: 'ActivityDetailCtrl'
                 }).
                 when('/profile', {
                     templateUrl: '/partials/profile.html',

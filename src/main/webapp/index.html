@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/offcanvas.css">
     <link rel="shortcut icon" href="/img/favicon.ico">
-    <meta property="og:title" content="Conference Central">
+    <meta property="og:title" content="Your Little One">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Conference Central web app that lets you manage conferences.">
+    <meta property="og:description" content="Your Little One web app that lets you manage activities.">
     <meta property="og:image" content="/img/CloudPlatform_logo.png">
     <meta property="og:site_name" content="An web app powered by Google App Engine">
 
@@ -27,9 +27,9 @@
          * so that Google JavaScript library ready in the angular modules.
          */
         function init() {
-            gapi.client.load('conference', 'v1', null, '//' + window.location.host + '/_ah/api');
+            gapi.client.load('activity', 'v1', null, '//' + window.location.host + '/_ah/api');
             gapi.client.load('oauth2', 'v2', function () {
-                angular.bootstrap(document, ['conferenceApp']);
+                angular.bootstrap(document, ['activityApp']);
             });
         };
     </script>
@@ -52,8 +52,8 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('/conference')}" ng-click="collapseNavbar()"><a href="#/conference">Show Activities</a></li>
-                <li ng-class="{ active: isActive('/conference/create')}" ng-click="collapseNavbar()"><a href="#/conference/create" >Create Activites</a></li>
+                <li ng-class="{ active: isActive('/activity')}" ng-click="collapseNavbar()"><a href="#/activity">Show Activities</a></li>
+                <li ng-class="{ active: isActive('/activity/create')}" ng-click="collapseNavbar()"><a href="#/activity/create" >Create Activites</a></li>
                 <li ng-class="{ active: isActive('/profile')}" ng-click="collapseNavbar()"><a href="#/profile">My Profile</a></li>
                 <li class="nav-divider"></li>
             </ul>
