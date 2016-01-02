@@ -12,7 +12,7 @@
  *
  */
 var app = angular.module('activityApp',
-    ['activityControllers', 'ngRoute', 'ui.bootstrap']).
+    ['activityControllers', 'ngRoute', 'ui.bootstrap', 'ui.bootstrap.datetimepicker']).
     config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
