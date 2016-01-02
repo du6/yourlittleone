@@ -104,3 +104,8 @@ ul#activities-list {
 .section-a {
     padding: 50px 0;
 }
+
+.datetimepicker-wrapper {
+    vertical-align: middle;
+    display: inline-block;
+}

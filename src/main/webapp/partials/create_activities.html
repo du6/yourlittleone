@@ -42,35 +42,23 @@
                 </div>
 
                 <div class="form-group" ng-controller="DatepickerCtrl">
-                    <label for="startDate">Start Date</label>
-                    <p class="input-group">
-                        <input id="startDate" type="text" class="form-control" datepicker-popup="{{format}}"
-                               ng-model="activity.startDate" is-open="opened"
-                               datepicker-options="dateOptions"
-                               close-text="Close"/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" ng-click="open($event)"><i
-                                class="glyphicon glyphicon-calendar"></i>
-                        </button>
-                    </span>
-                    </p>
+                    <div><label for="startDate">Start Date and Time</label></div>
+                    <datetimepicker ng-model="activity.startDate" show-meridian="true" 
+                        id="startDate" date-format="dd-MMMM-yyyy"
+                        date-format="dd-MMM-yyyy" date-options="dateOptions">
+                    </datetimepicker>
                 </div>
 
                 <div class="form-group" ng-controller="DatepickerCtrl">
-                    <label for="endDate">End Date</label>
-                    <span class="label label-danger"
-                        ng-show="!isValidDates()">End Date must be later or equal to Start Date!</span>
-                    <p class="input-group">
-                        <input id="endDate" type="text" class="form-control" datepicker-popup="{{format}}"
-                               ng-model="activity.endDate" is-open="opened"
-                               datepicker-options="dateOptions"
-                               close-text="Close"/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" ng-click="open($event)"><i
-                                class="glyphicon glyphicon-calendar"></i>
-                        </button>
-                    </span>
-                    </p>
+                    <div>
+                        <label for="endDate">End Date and Time</label>
+                        <span class="label label-danger"
+                            ng-show="!isValidDates()">End Date must be later or equal to Start Date!</span>
+                    </div>
+                    <datetimepicker ng-model="activity.endDate" show-meridian="true" 
+                        id="endDate" date-format="dd-MMMM-yyyy"
+                        date-format="dd-MMM-yyyy" date-options="dateOptions">
+                    </datetimepicker>
                 </div>
 
                 <div class="form-group">
